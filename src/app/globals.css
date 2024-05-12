@@ -4,4 +4,42 @@
 
 body{
   background-color: black;
+  color: #fff;
 }
+
+.underline-anim {
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+}
+
+.underline-anim::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  background: #ffc107;
+  transition: width .3s;
+}
+
+.underline-anim:hover::after {
+  width: 100%;
+}
+
+.stroke-text {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #ffc107;
+  background-color: transparent;
+}
+
+  .image-anim {
+    -webkit-animation:spin 10s linear infinite;
+    -moz-animation:spin 10s linear infinite;
+    animation:spin 10s linear infinite;
+  }
+  
+  @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+  @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+  @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } } 
